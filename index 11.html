@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>فرصتي - تفاعل مباشر</title>
+    <style>
+        body {
+            font-family: 'Tahoma', sans-serif;
+            background-color: #f1f8f6;
+            text-align: center;
+            padding: 40px;
+            color: #004d40;
+        }
+        button {
+            padding: 12px 20px;
+            font-size: 16px;
+            margin: 10px;
+            background-color: #00796b;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #004d40;
+        }
+    </style>
+</head>
+<body>
+    <h1>مرحبًا بك في فرصتي</h1>
+    <div id="app">
+        <button onclick="showNext()">ابدأ الآن</button>
+    </div>
+
+    <script>
+        function showNext() {
+            const app = document.getElementById("app");
+            app.innerHTML += '<br><button onclick="showProduct()">التالي</button>';
+        }
+
+        function showProduct() {
+            const app = document.getElementById("app");
+            app.innerHTML += '<br><p>📦 المنتج: دراجة نارية</p>';
+            app.innerHTML += '<button onclick="confirmOrder()">أضف إلى السلة</button>';
+        }
+
+        function confirmOrder() {
+            const app = document.getElementById("app");
+            app.innerHTML += '<br><p>✅ تمت إضافة المنتج إلى السلة!</p>';
+            app.innerHTML += '<button onclick="finish()">إنهاء</button>';
+        }
+
+        function finish() {
+            const app = document.getElementById("app");
+            app.innerHTML += '<br><p>🎉 شكرًا لك! تم إكمال العملية.</p>';
+        }
+    </script>
+</body>
+</html>
